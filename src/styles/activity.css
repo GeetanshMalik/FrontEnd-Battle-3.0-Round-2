@@ -1,0 +1,227 @@
+.activity-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  width: 320px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.activity-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.activity-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.activity-empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  text-align: center;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: rgba(30, 41, 59, 0.25);
+  border: 1px solid var(--border-color);
+  animation: slideIn 0.3s ease-out;
+  position: relative;
+  transition: border-color 0.2s ease;
+}
+
+.activity-item:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.activity-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.activity-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.activity-dot.dot-status {
+  background-color: var(--accent-warning);
+  box-shadow: 0 0 8px var(--accent-warning);
+}
+
+.activity-dot.dot-alert {
+  background-color: var(--accent-danger);
+  box-shadow: 0 0 8px var(--accent-danger);
+}
+
+.activity-dot.dot-updated {
+  background-color: var(--accent-success);
+  box-shadow: 0 0 8px var(--accent-success);
+}
+
+.activity-dot.dot-completed {
+  background-color: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+.activity-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-project-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+.activity-desc {
+  font-size: 0.725rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.activity-old {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.activity-new {
+  font-weight: 600;
+}
+
+.newVal-active {
+  color: var(--accent-success);
+}
+
+.newVal-failed {
+  color: var(--accent-danger);
+}
+
+.newVal-completed {
+  color: var(--accent-cyan);
+}
+
+.newVal-roi {
+  color: var(--accent-success);
+}
+
+.newVal-robots {
+  color: var(--accent-success);
+}
+
+.newVal-savings {
+  color: var(--accent-cyan);
+}
+
+.activity-time {
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.activity-legend {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 12px;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Manual Refresh Button */
+.activity-refresh-btn {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition: all 0.15s ease-in-out;
+}
+
+.activity-refresh-btn:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan-hover);
+  background: rgba(14, 165, 233, 0.1);
+}
+
+.activity-refresh-btn.has-updates {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  background: rgba(14, 165, 233, 0.05);
+}
+
+.refresh-badge {
+  background-color: var(--accent-cyan);
+  color: var(--bg-main);
+  font-size: 0.6rem;
+  font-family: var(--font-mono);
+  padding: 1px 4px;
+  border-radius: 10px;
+  line-height: 1;
+}
+
+.activity-refresh-btn.has-updates svg {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; filter: drop-shadow(0 0 3px var(--accent-cyan)); }
+  100% { opacity: 0.6; }
+}

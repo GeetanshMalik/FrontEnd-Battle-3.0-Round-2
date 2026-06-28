@@ -1,0 +1,31 @@
+/** Feature 3: Visual Alert System animations and warning flash configurations. */
+
+@keyframes alertRedFlash {
+  0% {
+    background-color: rgba(239, 68, 68, 0.25);
+    border-left: 2px solid var(--accent-danger);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes alertYellowFlash {
+  0% {
+    background-color: rgba(234, 179, 8, 0.25);
+    border-left: 2px solid var(--accent-warning);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* Red status alert for Failed projects */
+.row-alert-failed {
+  animation: alertRedFlash 1000ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Yellow status alert for negative ROI anomalies */
+.row-alert-anomaly {
+  animation: alertYellowFlash 1000ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

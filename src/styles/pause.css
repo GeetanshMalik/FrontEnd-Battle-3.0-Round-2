@@ -1,0 +1,86 @@
+/** CSS styles for the pause control button and real-time buffering overlay badge. */
+
+.pause-control-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pause-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background: rgba(30, 41, 59, 0.5);
+  color: var(--text-primary);
+  transition: all 0.2s ease-in-out;
+}
+
+.pause-btn:hover {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+}
+
+.btn-streaming {
+  color: var(--text-primary);
+}
+
+.btn-paused {
+  color: var(--accent-warning);
+  border-color: rgba(234, 179, 8, 0.4);
+  background: rgba(234, 179, 8, 0.05);
+}
+
+.btn-paused:hover {
+  background: rgba(234, 179, 8, 0.15);
+  border-color: var(--accent-warning);
+  box-shadow: 0 0 10px rgba(234, 179, 8, 0.25);
+}
+
+.btn-icon {
+  font-size: 0.8rem;
+}
+
+.pause-overlay-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  border-color: rgba(234, 179, 8, 0.3);
+  color: var(--accent-warning);
+  background: rgba(234, 179, 8, 0.05);
+  border-radius: 4px;
+}
+
+.pulse-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-warning);
+  box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.7);
+  animation: badgePulse 1.5s infinite;
+}
+
+@keyframes badgePulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(234, 179, 8, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(234, 179, 8, 0);
+  }
+}
